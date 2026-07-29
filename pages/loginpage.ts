@@ -1,7 +1,7 @@
 import {Page,Locator} from '@playwright/test';
 import { baseClass } from '../pages/basepage';
 
-export class loginPage extends baseClass{
+export class LoginPage extends baseClass{
     private userNameField: Locator;
     private passwordField: Locator
     private loginBtn: Locator;
@@ -20,6 +20,11 @@ export class loginPage extends baseClass{
     
         await this.userNameField.fill(userName);
         await this.passwordField.fill(passWord);
-        await this.loginBtn.click();
+        
+        await Promise.all([
+            this.page.waitForLoadState('networkidle'),
+            this.loginBtn.click()
+        ]);
+
     }
 } 
