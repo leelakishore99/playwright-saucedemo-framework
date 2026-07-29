@@ -1,12 +1,12 @@
 import{Page} from '@playwright/test'
 
-export class basePage{
+export class baseClass{
 
     constructor(public page:Page){}
 
     //Opens the URL
     async openUrl(url:string){
-        await this.page.goto(url,{waitUntil:'domcontentloaded'});
+        await this.page.goto(url,{waitUntil:'commit'});
     }
     //Locate by Locator
     locateByXpath(locator:string){
