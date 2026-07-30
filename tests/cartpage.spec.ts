@@ -21,4 +21,5 @@ const itemLoc = cartpage.products;
 await expect(itemLoc).toHaveText(['Sauce Labs Backpack','Sauce Labs Bike Light']);
 await cartpage.prdCheckout();
 
+
 });
