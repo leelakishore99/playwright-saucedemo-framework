@@ -10,16 +10,17 @@ const loginpage = new LoginPage(page);
 await loginpage.siteUrl('https://www.saucedemo.com/');
 await loginpage.login(data[0].username,data[0].password);
 
+//HomePage
 const homepage = new HomePage(page);
 await homepage.selectProduct('Sauce Labs Backpack');
 await homepage.selectProduct('Sauce Labs Bike Light');
 await expect(homepage.cartLogo).toHaveText('2');
 await homepage.clickCart();
 
+//CartPage
 const cartpage = new CartPage(page);
 const itemLoc = cartpage.products;
 await expect(itemLoc).toHaveText(['Sauce Labs Backpack','Sauce Labs Bike Light']);
 await cartpage.prdCheckout();
-
 
 });
