@@ -53,3 +53,4 @@ After running your local execution, generate and view the interactive HTML dashb
 ```bash
 npx playwright show-report
 ```
+<img width="1200" height="882" alt="image" src="https://github.com/user-attachments/assets/d6177b5d-cac4-4b21-89be-db2f52ecd521" />
